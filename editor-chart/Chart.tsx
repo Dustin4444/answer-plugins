@@ -136,32 +136,32 @@ const Chart: FC<ChartProps> = ({ editor, previewElement }) => {
     },
     {
       label: t('bar_chart'),
-      tpl: `bar
-      title Sales Data
-      "Q1" : 150
-      "Q2" : 200
-      "Q3" : 250
-      "Q4" : 300
+      tpl: `%%{init: {"theme": "base", "themeVariables": { "barColor": "#ff0000" }}}%%
+      bar
+        title Bar Chart
+        "Category 1" : 10
+        "Category 2" : 20
+        "Category 3" : 30
               `,
     },
     {
       label: t('line_chart'),
-      tpl: `line
-      title Temperature Data
-      "Jan" : 30
-      "Feb" : 35
-      "Mar" : 40
-      "Apr" : 45
+      tpl: `%%{init: {"theme": "base", "themeVariables": { "lineColor": "#00ff00" }}}%%
+      line
+        title Line Chart
+        "Category 1" : 10
+        "Category 2" : 20
+        "Category 3" : 30
               `,
     },
     {
       label: t('scatter_plot'),
-      tpl: `scatter
-      title Height vs Weight
-      "150,50" : 1
-      "160,60" : 2
-      "170,70" : 3
-      "180,80" : 4
+      tpl: `%%{init: {"theme": "base", "themeVariables": { "scatterColor": "#0000ff" }}}%%
+      scatter
+        title Scatter Plot
+        "Category 1" : 10
+        "Category 2" : 20
+        "Category 3" : 30
               `,
     },
   ];
@@ -170,10 +170,6 @@ const Chart: FC<ChartProps> = ({ editor, previewElement }) => {
     const { ch } = editor.getCursor();
 
     editor.replaceSelection(`${ch ? '\n' : ''}\`\`\`mermaid\n${tpl}\n\`\`\`\n`);
-  };
-
-  const handleExport = (format: string) => {
-    // Implement export functionality here
   };
 
   return (
@@ -206,14 +202,14 @@ const Chart: FC<ChartProps> = ({ editor, previewElement }) => {
           <Dropdown.Item
             onClick={(e) => {
               e.preventDefault();
-              handleExport('image');
+              // Implement export as image logic here
             }}>
             {t('export_image')}
           </Dropdown.Item>
           <Dropdown.Item
             onClick={(e) => {
               e.preventDefault();
-              handleExport('pdf');
+              // Implement export as PDF logic here
             }}>
             {t('export_pdf')}
           </Dropdown.Item>
