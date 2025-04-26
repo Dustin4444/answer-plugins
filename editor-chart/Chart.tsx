@@ -134,12 +134,44 @@ const Chart: FC<ChartProps> = ({ editor, previewElement }) => {
       PRODUCT ||--o{ ORDER-ITEM : "ordered in"
         `,
     },
+    {
+      label: t('bar_chart'),
+      tpl: `bar
+      title Bar Chart
+      "Category 1" : 10
+      "Category 2" : 20
+      "Category 3" : 30
+              `,
+    },
+    {
+      label: t('line_chart'),
+      tpl: `line
+      title Line Chart
+      "January" : 10
+      "February" : 20
+      "March" : 30
+              `,
+    },
+    {
+      label: t('scatter_plot'),
+      tpl: `scatter
+      title Scatter Plot
+      "Point 1" : 10, 20
+      "Point 2" : 30, 40
+      "Point 3" : 50, 60
+              `,
+    },
   ];
 
   const handleChange = (tpl: string) => {
     const { ch } = editor.getCursor();
 
     editor.replaceSelection(`${ch ? '\n' : ''}\`\`\`mermaid\n${tpl}\n\`\`\`\n`);
+  };
+
+  const handleExport = (format: string) => {
+    // Implement export functionality here
+    console.log(`Exporting chart as ${format}`);
   };
 
   return (
@@ -168,6 +200,21 @@ const Chart: FC<ChartProps> = ({ editor, previewElement }) => {
               </Dropdown.Item>
             );
           })}
+          <Dropdown.Divider />
+          <Dropdown.Item
+            onClick={(e) => {
+              e.preventDefault();
+              handleExport('image');
+            }}>
+            {t('export_image')}
+          </Dropdown.Item>
+          <Dropdown.Item
+            onClick={(e) => {
+              e.preventDefault();
+              handleExport('pdf');
+            }}>
+            {t('export_pdf')}
+          </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </div>

@@ -34,3 +34,8 @@ plugin:
       user_defined_diagram: User defined diagram
       gantt_chart: Gantt chart
       pie_chart: Pie chart
+      bar_chart: Bar chart
+      line_chart: Line chart
+      scatter_plot: Scatter plot
+      export_image: Export as image
+      export_pdf: Export as PDF
