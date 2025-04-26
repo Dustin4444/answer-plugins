@@ -42,52 +42,8 @@ const useRenderChart = (
     });
   };
 
-  useEffect(() => {
-    if (!element) {
-      return;
-    }
-
-    let targetElement;
-    if (element instanceof HTMLElement) {
-      targetElement = element;
-    } else {
-      targetElement = element.current;
-    }
-    render(targetElement);
-    const observer = new MutationObserver(() => {
-      render(targetElement);
-    });
-
-    observer.observe(targetElement, {
-      childList: true,
-      attributes: true,
-      subtree: true,
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [element]);
-};
-
-const useRenderNewChartTypes = (
-  element: HTMLElement | RefObject<HTMLElement> | null,
-) => {
-  const render = (element) => {
-    mermaid.initialize({ startOnLoad: false });
-    element.querySelectorAll('.language-mermaid').forEach((pre) => {
-      const flag = Date.now();
-      mermaid.render(
-        `theGraph${flag}`,
-        pre.textContent || '',
-        function (svgCode: string) {
-          const p = document.createElement('p');
-          p.className = 'text-center';
-          p.innerHTML = svgCode;
-          pre.parentNode?.replaceChild(p, pre);
-        },
-      );
-    });
+  const customizeChart = (element) => {
+    // Implement customization logic here
   };
 
   useEffect(() => {
@@ -102,8 +58,10 @@ const useRenderNewChartTypes = (
       targetElement = element.current;
     }
     render(targetElement);
+    customizeChart(targetElement);
     const observer = new MutationObserver(() => {
       render(targetElement);
+      customizeChart(targetElement);
     });
 
     observer.observe(targetElement, {
@@ -118,4 +76,4 @@ const useRenderNewChartTypes = (
   }, [element]);
 };
 
-export { useRenderChart, useRenderNewChartTypes };
+export { useRenderChart };

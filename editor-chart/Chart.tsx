@@ -137,28 +137,31 @@ const Chart: FC<ChartProps> = ({ editor, previewElement }) => {
     {
       label: t('bar_chart'),
       tpl: `bar
-      title Bar Chart
-      "Category 1" : 10
-      "Category 2" : 20
-      "Category 3" : 30
+      title Sales Data
+      "Q1" : 150
+      "Q2" : 200
+      "Q3" : 250
+      "Q4" : 300
               `,
     },
     {
       label: t('line_chart'),
       tpl: `line
-      title Line Chart
-      "January" : 10
-      "February" : 20
-      "March" : 30
+      title Temperature Data
+      "Jan" : 30
+      "Feb" : 35
+      "Mar" : 40
+      "Apr" : 45
               `,
     },
     {
       label: t('scatter_plot'),
       tpl: `scatter
-      title Scatter Plot
-      "Point 1" : 10, 20
-      "Point 2" : 30, 40
-      "Point 3" : 50, 60
+      title Height vs Weight
+      "150,50" : 1
+      "160,60" : 2
+      "170,70" : 3
+      "180,80" : 4
               `,
     },
   ];
@@ -171,7 +174,6 @@ const Chart: FC<ChartProps> = ({ editor, previewElement }) => {
 
   const handleExport = (format: string) => {
     // Implement export functionality here
-    console.log(`Exporting chart as ${format}`);
   };
 
   return (
