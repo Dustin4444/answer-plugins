@@ -136,32 +136,29 @@ const Chart: FC<ChartProps> = ({ editor, previewElement }) => {
     },
     {
       label: t('bar_chart'),
-      tpl: `%%{init: {"theme": "base", "themeVariables": { "barColor": "#ff0000" }}}%%
-      bar
-        title Bar Chart
-        "Category 1" : 10
-        "Category 2" : 20
-        "Category 3" : 30
+      tpl: `bar
+      title Monthly revenue
+      "January" : 50
+      "February" : 75
+      "March" : 100
               `,
     },
     {
       label: t('line_chart'),
-      tpl: `%%{init: {"theme": "base", "themeVariables": { "lineColor": "#00ff00" }}}%%
-      line
-        title Line Chart
-        "Category 1" : 10
-        "Category 2" : 20
-        "Category 3" : 30
+      tpl: `line
+      title Monthly revenue
+      "January" : 50
+      "February" : 75
+      "March" : 100
               `,
     },
     {
       label: t('scatter_plot'),
-      tpl: `%%{init: {"theme": "base", "themeVariables": { "scatterColor": "#0000ff" }}}%%
-      scatter
-        title Scatter Plot
-        "Category 1" : 10
-        "Category 2" : 20
-        "Category 3" : 30
+      tpl: `scatter
+      title Monthly revenue
+      "January" : 50
+      "February" : 75
+      "March" : 100
               `,
     },
   ];
@@ -198,18 +195,17 @@ const Chart: FC<ChartProps> = ({ editor, previewElement }) => {
               </Dropdown.Item>
             );
           })}
-          <Dropdown.Divider />
           <Dropdown.Item
             onClick={(e) => {
               e.preventDefault();
-              // Implement export as image logic here
+              // Implement export as image functionality here
             }}>
             {t('export_image')}
           </Dropdown.Item>
           <Dropdown.Item
             onClick={(e) => {
               e.preventDefault();
-              // Implement export as PDF logic here
+              // Implement export as PDF functionality here
             }}>
             {t('export_pdf')}
           </Dropdown.Item>
