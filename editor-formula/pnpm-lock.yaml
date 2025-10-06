@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   katex:
-    specifier: ^0.16.2
-    version: 0.16.10
+    specifier: ^0.16.23
+    version: 0.16.23
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -1524,8 +1524,8 @@ packages:
       graceful-fs: 4.2.11
     dev: true
 
-  /katex@0.16.10:
-    resolution: {integrity: sha512-ZiqaC04tp2O5utMsl2TEZTXxa6WSC4yo0fv5ML++D3QZv/vx2Mct0mTlRx3O+uUkjfuAgOkzsCmq5MiUEsDDdA==}
+  /katex@0.16.23:
+    resolution: {integrity: sha512-7VlC1hsEEolL9xNO05v9VjrvWZePkCVBJqj8ruICxYjZfHaHbaU53AlP+PODyFIXEnaEIEWi3wJy7FPZ95JAVg==}
     hasBin: true
     dependencies:
       commander: 8.3.0
