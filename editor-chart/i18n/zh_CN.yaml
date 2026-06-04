@@ -34,3 +34,8 @@ plugin:
       user_defined_diagram: 用户自定义图
       gantt_chart: 甘特图
       pie_chart: 饼图
+      bar_chart: 柱状图
+      line_chart: 折线图
+      scatter_plot: 散点图
+      export_image: 导出为图片
+      export_pdf: 导出为 PDF

@@ -42,6 +42,10 @@ const useRenderChart = (
     });
   };
 
+  const customizeChart = (element) => {
+    // Implement customization logic here
+  };
+
   useEffect(() => {
     if (!element) {
       return;
@@ -54,8 +58,10 @@ const useRenderChart = (
       targetElement = element.current;
     }
     render(targetElement);
+    customizeChart(targetElement);
     const observer = new MutationObserver(() => {
       render(targetElement);
+      customizeChart(targetElement);
     });
 
     observer.observe(targetElement, {

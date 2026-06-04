@@ -134,6 +134,33 @@ const Chart: FC<ChartProps> = ({ editor, previewElement }) => {
       PRODUCT ||--o{ ORDER-ITEM : "ordered in"
         `,
     },
+    {
+      label: t('bar_chart'),
+      tpl: `bar
+      title Monthly revenue
+      "January" : 50
+      "February" : 75
+      "March" : 100
+              `,
+    },
+    {
+      label: t('line_chart'),
+      tpl: `line
+      title Monthly revenue
+      "January" : 50
+      "February" : 75
+      "March" : 100
+              `,
+    },
+    {
+      label: t('scatter_plot'),
+      tpl: `scatter
+      title Monthly revenue
+      "January" : 50
+      "February" : 75
+      "March" : 100
+              `,
+    },
   ];
 
   const handleChange = (tpl: string) => {
@@ -168,6 +195,20 @@ const Chart: FC<ChartProps> = ({ editor, previewElement }) => {
               </Dropdown.Item>
             );
           })}
+          <Dropdown.Item
+            onClick={(e) => {
+              e.preventDefault();
+              // Implement export as image functionality here
+            }}>
+            {t('export_image')}
+          </Dropdown.Item>
+          <Dropdown.Item
+            onClick={(e) => {
+              e.preventDefault();
+              // Implement export as PDF functionality here
+            }}>
+            {t('export_pdf')}
+          </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </div>
