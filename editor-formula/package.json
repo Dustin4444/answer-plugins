@@ -39,7 +39,7 @@
     "typescript": "5.4.2",
     "vite": "^4.4.5",
     "vite-plugin-css-injected-by-js": "^3.3.0",
-    "vite-plugin-dts": "^3.9.1"
+    "vite-plugin-dts": "^4.0.0"
   },
   "dependencies": {
     "katex": "^0.16.2"
