@@ -1,6 +1,6 @@
 module github.com/apache/answer-plugins/search-meilisearch
 
-go 1.23.0
+go 1.24
 
 require (
 	github.com/apache/answer v1.7.0
@@ -31,7 +31,7 @@ require (
 	github.com/gorilla/css v1.0.1 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
-	github.com/klauspost/compress v1.15.6 // indirect
+	github.com/klauspost/compress v1.18.7 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.8 // indirect
 	github.com/kr/text v0.2.0 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
